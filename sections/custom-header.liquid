@@ -1,101 +1,123 @@
-<header class="flex flex-row align-center items-center justify-between space-x-20 pr-10" x-data="{ mobileMenuOpen: false}">
-  <div class="header-logo min-w-[60px] max-w-[200px]">
-    <!-- Logo Link -->
-    <a
-      class="logo__link"
-      href="{{ routes.root_url }}"
-      title="{{ shop.name }}">
-      {%- if section.settings.logo != blank -%}
-        {%- capture img_size -%}{{ section.settings.logo_img_width_int | times: 2 }}x{%- endcapture -%}
-        <img
-          class="logo__image"
-          src="{{ section.settings.logo | img_url: img_size }}"
-          alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
-          itemprop="logo"
-          width="{{ section.settings.logo.width }}"
-          height="{{ section.settings.logo.height }}" />
+<style>
+  /* Custom CSS */
+  .navigation__link,
+  .cart-link__label {
+    font-family: 'IBM Plex Sans'
+    , sans-serif;
+    font-weight: bold;
+  }
 
-        {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
+  .navigation__item:last-child {
+    color: #DA394C;
+  }
+
+  .navigation.navigation--main {
+    border-bottom: none;
+  }
+
+</style>
+
+
+<div x-data="{ mobileMenuOpen: false}">
+  <header class="flex flex-row align-center items-center justify-between space-x-20 py-4 pr-10">
+    <div class="header-logo min-w-[60px] max-w-[200px]">
+      <!-- Logo Link -->
+      <a
+        class="logo__link"
+        href="{{ routes.root_url }}"
+        title="{{ shop.name }}">
+        {%- if section.settings.logo != blank -%}
+          {%- capture img_size -%}{{ section.settings.logo_img_width_int | times: 2 }}x{%- endcapture -%}
           <img
-            class="logo__image-transparent"
-            src="{{ section.settings.transparent_logo | img_url: img_size }}"
-            alt="{{ section.settings.transparent_logo.alt | escape }}"
-            width="{{ section.settings.transparent_logo.width }}"
-            height="{{ section.settings.transparent_logo.height }}"
-            aria-hidden="true" />
+            class="logo__image"
+            src="{{ section.settings.logo | img_url: img_size }}"
+            alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+            itemprop="logo"
+            width="{{ section.settings.logo.width }}"
+            height="{{ section.settings.logo.height }}" />
+
+          {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
+            <img
+              class="logo__image-transparent"
+              src="{{ section.settings.transparent_logo | img_url: img_size }}"
+              alt="{{ section.settings.transparent_logo.alt | escape }}"
+              width="{{ section.settings.transparent_logo.width }}"
+              height="{{ section.settings.transparent_logo.height }}"
+              aria-hidden="true" />
+          {%- endif -%}
+
+        {%- else -%}
+          <span class="logotext">{{ shop.name }}</span>
         {%- endif -%}
-
-      {%- else -%}
-        <span class="logotext">{{ shop.name }}</span>
-      {%- endif -%}
-    </a>
-  </div>
-  <div class="header-menu hidden md:flex flex-col items-center flex-1 gap-y-2 mx-5" ">
-    <div class="header-search header-search w-full h-10 bg-gray-100 px-3 rounded-md">
-      <!-- Search form -->
-      <form
-        action="{{ routes.search_url }}"
-        method="get"
-        class="flex-auto">
-        <div class="flex flex-row space-x-2 align-center items-center">
-          <input
-            type="search"
-            name="q"
-            placeholder="What are you looking for?"
-            class="flex-1 focus:outline-none bg-transparent text-blue-700 font-bold">
-          <button type="submit" class="hover:bg-gray-100 border-0 w-10 h-10 flex align-center items-center m-0 p-0">
-            {% render 'icon-search' %}
-          </button>
-        </div>
-      </form>
-    </div>
-    <nav class="header-navigation">
-      <!-- Desktop Navigation -->
-      <div id="main-nav">
-        <div
-          class="navigation navigation--main flex flex-row space-x-4"
-          role="navigation"
-          aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
-          <div class="navigation__tier-1-container">
-            {% render 'main-nav-links'
-              , link_list: section.settings.menu_linklist
-              , mobile: false
-              , featured_links: featured_links %}
-
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
-  <div class="header-icons flex flex-row space-x-4">
-    <!-- Favourites -->
-    <!-- TODO: Set up 3rd party favouite app -->
-    <div class="cursor-pointer flex align-center items-center">{% render 'icon-heart' %}</div>
-    <!-- Cart -->
-    <div>
-      <a href="{{ routes.cart_url }}" class="cart-link">
-        <span class="cart-link__label{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
-          {{- 'layout.header.cart' | t | escape -}}
-        </span>
-        <span class="cart-link__icon">
-          {%- if section.settings.cart_icon == 'basket' -%}
-            {%- render 'svg-basket' -%}
-          {%- elsif section.settings.cart_icon == 'bag' -%}
-            {%- render 'svg-bag' -%}
-          {%- else -%}
-            {%- render 'svg-cart' -%}
-          {%- endif -%}
-          {%- if cart.item_count > 0 -%}
-            <span class="cart-link__count">{{ cart.item_count }}</span>
-          {%- endif -%}
-        </span>
       </a>
     </div>
-    <!-- Mobile Menu Open Button -->
-    <div class="cursor-pointer flex align-center items-center" x-on:click="mobileMenuOpen = true">{% render 'icon-menu' %}</div>
-  </div>
+    <div class="header-menu hidden md:flex flex-col items-center flex-1 gap-y-2 mx-5" ">
+      <div class="header-search header-search w-full h-10 bg-gray-100 px-3 rounded-md">
+        <!-- Search form -->
+        <form
+          action="{{ routes.search_url }}"
+          method="get"
+          class="flex-auto">
+          <div class="flex flex-row space-x-2 align-center items-center">
+            <input
+              type="search"
+              name="q"
+              placeholder="What are you looking for?"
+              class="flex-1 focus:outline-none bg-transparent text-blue-700 font-bold">
+            <button type="submit" class="hover:bg-gray-100 border-0 w-10 h-10 flex align-center items-center m-0 p-0">
+              {% render 'icon-search' %}
+            </button>
+          </div>
+        </form>
+      </div>
+      <nav class="header-navigation">
+        <!-- Desktop Navigation -->
+        <div id="main-nav">
+          <div
+            class="navigation navigation--main flex flex-row space-x-4"
+            role="navigation"
+            aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
+            <div class="navigation__tier-1-container">
+              {% render 'main-nav-links'
+                , link_list: section.settings.menu_linklist
+                , mobile: false
+                , featured_links: featured_links %}
 
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="header-icons flex flex-row space-x-4">
+      <!-- Favourites -->
+      <!-- TODO: Set up 3rd party favouite app -->
+      <div class="cursor-pointer flex align-center items-center">{% render 'icon-heart' %}</div>
+      <!-- Cart -->
+      <div>
+        <a href="{{ routes.cart_url }}" class="cart-link">
+          <span class="cart-link__label{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
+            {{- 'layout.header.cart' | t | escape -}}
+          </span>
+          <span class="cart-link__icon">
+            {%- if section.settings.cart_icon == 'basket' -%}
+              {%- render 'svg-basket' -%}
+            {%- elsif section.settings.cart_icon == 'bag' -%}
+              {%- render 'svg-bag' -%}
+            {%- else -%}
+              {%- render 'svg-cart' -%}
+            {%- endif -%}
+            {%- if cart.item_count > 0 -%}
+              <span class="cart-link__count">{{ cart.item_count }}</span>
+            {%- endif -%}
+          </span>
+        </a>
+      </div>
+      <!-- Mobile Menu Open Button -->
+      <div class="cursor-pointer flex md:hidden align-center items-center" x-on:click="mobileMenuOpen = true">{% render 'icon-menu' %}</div>
+    </div>
 
+  </header>
+  <!-- Mobile Button Menu -->
   <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
     <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
       <div class="p-5 divide-y-2 divide-gray-50">
@@ -109,7 +131,7 @@
             <button
               x-on:click="mobileMenuOpen = false"
               type="button"
-              class="bg-white rounded-md p-2 text-gray-500">
+              class="bg-gray p-2 cursor-pointer hover:bg-gray-200 border-0">
               {% render "icon-close" %}
             </button>
           </div>
@@ -118,7 +140,7 @@
         <!-- NAVIGATION LINKS FOR MOBILE MENU -->
         <div class="pt-3">
           <nav class="grid gap-y-7">
-            {% for link in section.settings.menu_linklist %}
+            {% for link in linklists[section.settings.menu_linklist].links %}
               <a href="{{ link.url }}" class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
                 {{ link.title }}
               </a>
@@ -129,8 +151,7 @@
     </div>
   </div>
 
-
-</header>
+</div>
 
 
 {% schema %}
