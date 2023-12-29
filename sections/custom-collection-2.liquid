@@ -1,0 +1,127 @@
+<style>
+  .collection_link_button {
+    color: #004289;
+    background-color: white;
+  }
+
+  .collection_link_button:hover {
+    color: white;
+    background-color: #004289;
+  }
+</style>
+
+<div class="custom-collection-2__container flex flex-col md:flex-row max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-4 md:space-y-0 mb-6">
+  <!-- Collection 1 -->
+  {% assign colleciton_l_image = section.settings.featured_collection_l.image | image_url: width: 720 %}
+
+  <div class="custom-collection-2__collection-l flex-1 min-h-[576px] bg-center bg-cover" style="background-image: url('{{ colleciton_l_image }} }}')">
+    <div class="text-white h-full flex flex-col align-center justify-center backdrop-brightness-50 space-y-8 items-center min-h-[inherit]">
+      <span class="uppercase font-bold text-xs">{{ section.settings.featured_collection_l_title }}</span>
+      {% assign collection_l = section.settings.featured_collection_l %}
+      <!-- Collection Title -->
+      <h2 class="text-white text-6xl font-bold">
+        {% if collection_l.title != blank %}
+          {{ collection_l.title }}
+        {% else %}
+          Collection 1
+        {% endif %}
+      </h2>
+      <!-- Collection Description -->
+      <p class="w-[80%] max-w-[300px]">{{ section.settings.featured_collection_l_description }}</p>
+      <!-- Collection Link -->
+      <a href="{{ collection_l.url }}" class="collection_link_button uppercase px-4 py-2 font-bold text-xs  transition duration-200">
+        {% if section.settings.featured_collection_l_button_text != blank %}
+          {{ section.settings.featured_collection_l_button_text }}
+        {% else %}
+          Shop {{ section.settings.featured_collection_l.title }}
+        {% endif %}
+      </a>
+    </div>
+</div>
+
+  <!-- Collection 2 -->
+  {% assign colleciton_r_image = section.settings.featured_collection_r.image | image_url: width: 720 %}
+
+  <div class="custom-collection-2__collection-r bg-gray-200 flex-1 md:min-w-[60%] min-h-[576px] bg-center bg-cover" style="background-image: url('{{ colleciton_r_image }} }}')">
+    <div class="text-white h-full flex flex-col align-center justify-center backdrop-brightness-50 space-y-8 items-center min-h-[inherit]">
+      <span class="uppercase font-bold text-xs">
+        {{ section.settings.featured_collection_r_title }}
+      </span>
+      {% assign collection_r = section.settings.featured_collection_r %}
+      <!-- Collection Title -->
+      <h2 class="text-white text-6xl font-bold">
+        {% if collection_r.title != blank %}
+          {{ collection_r.title }}
+        {% else %}
+          Collection 2
+        {% endif %}
+      </h2>
+      <!-- Collection Description -->
+      <p class="w-[80%] max-w-[400px]">{{ section.settings.featured_collection_r_description }}</p>
+      <!-- Collection Link -->
+      <a href="{{ collection_r.url }}" class="collection_link_button uppercase px-4 py-2 font-bold text-xs  transition duration-200">
+        {% if section.settings.featured_collection_r_button_text != blank %}
+          {{ section.settings.featured_collection_r_button_text }}
+        {% else %}
+          Shop {{ section.settings.featured_collection_r.title }}
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection Banner 2",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "featured_collection_l",
+        "label": "Collection Left"
+      },
+      {
+        "type": "text",
+        "id": "featured_collection_l_title",
+        "label": "Collection Left Title",
+        "default": "everything you need"
+      },
+      {
+        "type": "text",
+        "id": "featured_collection_l_description",
+        "label": "Collection Left Description",
+        "default": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+      },
+      {
+        "type": "text",
+        "id": "featured_collection_l_button_text",
+        "label": "Collection Left Button Text",
+        "default": "Shop Fishing"
+      }, {
+        "type": "collection",
+        "id": "featured_collection_r",
+        "label": "Collection Right"
+      }, {
+        "type": "text",
+        "id": "featured_collection_r_title",
+        "label": "Collection Right Title",
+        "default": "on an adventure"
+      }, {
+        "type": "text",
+        "id": "featured_collection_r_description",
+        "label": "Collection Right Description",
+        "default": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+      }, {
+        "type": "text",
+        "id": "featured_collection_r_button_text",
+        "label": "Collection Right Button Text",
+        "default": "Collection Right Button Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collection Banner 2"
+      }
+    ]
+  }
+{% endschema %}

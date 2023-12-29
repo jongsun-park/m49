@@ -117,9 +117,8 @@
     {% comment %} {{ 'application.css' | asset_url | stylesheet_tag }} {% endcomment %}
     {{ 'application.js' | asset_url | script_tag }}
 
-  {% render 'boost-sd-fallback' %}
+    {% render 'boost-sd-fallback' %}
     {{ content_for_header }}
-</head>
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>

@@ -8,12 +8,10 @@ module.exports = {
     "./templates/*.liquid",
   ],
   theme: {
-    extend: {
-      colors: {
-        secondary_light: "#0468DB",
-        secondary_dark: "#3004289",
-        bg_gray: "#F5F6F4",
-      },
+    colors: {
+      secondary_400: "#0468DB",
+      secondary_600: "#004289",
+      background: "#F5F6F4",
     },
   },
   plugins: [],
