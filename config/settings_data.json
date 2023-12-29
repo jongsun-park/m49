@@ -1091,6 +1091,8 @@
           "1601372812538": {
             "type": "text",
             "settings": {
+              "title": "Talk about your store",
+              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>",
               "image_width": 55,
               "show_social_icons": true,
               "soc_icons_large": true
@@ -1099,12 +1101,16 @@
           "1601372709037": {
             "type": "menu",
             "settings": {
+              "title": "Quick links",
               "menu": "footer"
             }
           },
           "1601372771635": {
             "type": "newsletter",
             "settings": {
+              "title": "Newsletter",
+              "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
+              "button_style": "primary",
               "show_social_icons": true,
               "soc_icons_large": false
             }
@@ -1116,7 +1122,10 @@
           "1601372771635"
         ],
         "settings": {
-          "show_payment_icons": true
+          "lower_menu": "",
+          "show_payment_icons": true,
+          "show_country_selector": true,
+          "show_language_selector": true
         }
       },
       "announcement-bar": {
@@ -1142,7 +1151,11 @@
         "settings": {
           "announcement_bar_col": "#001d7c",
           "announcement_text_col": "#ffffff",
-          "show_social_icons": true
+          "message_font_size": 14,
+          "show_social_icons": true,
+          "menu": "",
+          "show_country_selector": true,
+          "show_language_selector": true
         }
       },
       "store-messages": {
@@ -1153,7 +1166,8 @@
           "head_not_col_txt1": "#171717",
           "head_not_col_txt2": "#4c4c4b",
           "head_not_mob_show": false,
-          "head_not_mob_text": ""
+          "head_not_mob_text": "",
+          "head_not_mob_url": ""
         }
       },
       "popup": {
@@ -1163,11 +1177,41 @@
           "popup_delay_seconds": 4,
           "popup_dismiss_for_days": 2,
           "position": "bottom-right",
+          "title": "Sign up and save",
+          "text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.<\/p>",
           "show_newsletter": true,
           "show_social_icons": true
         }
+      },
+      "custom-header": {
+        "type": "custom-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo-removebg-preview.png",
+          "logo_img_width_int": 180,
+          "mobile_logo_img_width_int": 100,
+          "logo_h1": true,
+          "enable_sticky": false,
+          "enable_transparent": false,
+          "transparent_color": "#ffffff",
+          "menu_linklist": "main-menu",
+          "menu_linklist_mobile": "",
+          "menu_layout": "underneath",
+          "nav_featured_link": "Sale",
+          "enable_mobile_promo_carousel": true,
+          "enable_nav_mob_products": false,
+          "nav_mob_products_title": "Best Sellers",
+          "nav_mob_products_collection": "",
+          "enable_search": true,
+          "search_suggestions_title": "",
+          "search_suggestions_menu": "",
+          "icon_strategy": "icons_cart_search",
+          "cart_icon": "basket"
+        }
       }
     },
+    "content_for_index": [
+
+    ],
     "blocks": {
       "ad562f42-a5af-48a3-b559-a4673437d1d2": {
         "type": "shopify:\/\/apps\/boost-ai-search-discovery\/blocks\/boost-sd\/7fc998ae-a150-4367-bab8-505d8a4503f7",
