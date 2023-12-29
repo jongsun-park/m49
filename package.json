@@ -1,0 +1,19 @@
+{
+  "name": "m49",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "shopify": "shopify theme dev --live-reload=full-page",
+    "tailwindcss": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.4.0",
+    "prettier": "^3.1.1",
+    "tailwindcss": "^3.4.0"
+  }
+}

@@ -8,58 +8,67 @@
   endif
 -%}
 <html lang="{{ request.locale.iso_code }}" dir="{{ lang_dir }}">
-<head>
-  <!-- Symmetry 5.6.0 -->
+  <head>
+    <!-- Symmetry 5.6.0 -->
 
-  <title>
-    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
-  </title>
+    <title>
+      {{ page_title }}{% if current_tags %}
+        {% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}
+      {% if current_page != 1 %}
+        &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+      {% unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}{% endunless %}
+    </title>
 
-  {% render 'head-tag' %}
+    {% render 'head-tag' %}
 
-  {%- liquid
-    assign base_font = settings.type_base_font
-    assign base_font_bold = base_font | font_modify: 'weight', 'bolder'
-    assign base_font_medium = base_font | font_modify: 'weight', '500'
-    assign base_font_italic = base_font | font_modify: 'style', 'italic'
-    assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
-    assign heading_font = settings.type_heading_font
-    assign logo_font = settings.type_logo_font
-    assign nav_font = settings.type_nav_font
-    assign nav_font_600 = nav_font | font_modify: 'weight', '600'
-  -%}
+    {%- liquid
+      assign base_font = settings.type_base_font
+      assign base_font_bold = base_font | font_modify: 'weight', 'bolder'
+      assign base_font_medium = base_font | font_modify: 'weight', '500'
+      assign base_font_italic = base_font | font_modify: 'style', 'italic'
+      assign base_font_bold_italic = base_font_bold | font_modify: 'style', 'italic'
+      assign heading_font = settings.type_heading_font
+      assign logo_font = settings.type_logo_font
+      assign nav_font = settings.type_nav_font
+      assign nav_font_600 = nav_font | font_modify: 'weight', '600'
+    -%}
 
-  <style>
-    {{ base_font | font_face: font_display: 'fallback' }}
-    {{ base_font_bold | font_face: font_display: 'fallback' }}
-    {{ base_font_medium | font_face: font_display: 'fallback' }}
-    {{ base_font_italic | font_face: font_display: 'fallback' }}
-    {{ base_font_bold_italic | font_face: font_display: 'fallback' }}
-    {{ heading_font | font_face: font_display: 'fallback' }}
-    {{ logo_font | font_face: font_display: 'fallback' }}
-    {{ nav_font | font_face: font_display: 'fallback' }}
-    {{ nav_font_600 | font_face: font_display: 'fallback' }}
-  </style>
+    <style>
+      {{ base_font | font_face: font_display: 'fallback' }}
+      {{ base_font_bold | font_face: font_display: 'fallback' }}
+      {{ base_font_medium | font_face: font_display: 'fallback' }}
+      {{ base_font_italic | font_face: font_display: 'fallback' }}
+      {{ base_font_bold_italic | font_face: font_display: 'fallback' }}
+      {{ heading_font | font_face: font_display: 'fallback' }}
+      {{ logo_font | font_face: font_display: 'fallback' }}
+      {{ nav_font | font_face: font_display: 'fallback' }}
+      {{ nav_font_600 | font_face: font_display: 'fallback' }}
+    </style>
 
-  {% render 'social-meta-tags' %}
+    {% render 'social-meta-tags' %}
 
-  {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'styles.css' | asset_url | stylesheet_tag: preload: true }}
 
-  {%- if settings.custom_theme_css != blank -%}
-    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
-  {%- endif -%}
+    {%- if settings.custom_theme_css != blank -%}
+      {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+    {%- endif -%}
 
-  {%- if settings.swatch_enabled and settings.swatch_value_list != blank -%}
-    <link rel="stylesheet" href="{{ 'swatches.css' | asset_url }}" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="{{ 'swatches.css' | asset_url }}"></noscript>
-  {%- endif -%}
+    {%- if settings.swatch_enabled and settings.swatch_value_list != blank -%}
+      <link
+        rel="stylesheet"
+        href="{{ 'swatches.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'">
+      <noscript><link rel="stylesheet" href="{{ 'swatches.css' | asset_url }}"></noscript>
+    {%- endif -%}
 
-  <script>
-    window.theme = window.theme || {};
-    theme.money_format_with_product_code_preference = {% if settings.product_currency_code_enabled %}{{ shop.money_with_currency_format | json }}{% else %}{{ shop.money_format | json }}{% endif %};
-    theme.money_format_with_cart_code_preference = {% if settings.cart_currency_code_enabled %}{{ shop.money_with_currency_format | json }}{% else %}{{ shop.money_format | json }}{% endif %};
-    theme.money_format = {{ shop.money_format | json }};
-    theme.strings = {
+    <script>
+          window.theme = window.theme || {};
+          theme.money_format_with_product_code_preference = {% if settings.product_currency_code_enabled %}{{ shop.money_with_currency_format | json }}{% else %}{{ shop.money_format | json }}{% endif %};
+          theme.money_format_with_cart_code_preference = {% if settings.cart_currency_code_enabled %}{{ shop.money_with_currency_format | json }}{% else %}{{ shop.money_format | json }}{% endif %};
+          theme.money_format = {{ shop.money_format | json }};
+          theme.strings = {
       previous: {{ 'general.accessibility_labels.previous' | t | json }},
       next: {{ 'general.accessibility_labels.next' | t | json }},
       addressError: {{ 'map.errors.address_error' | t | json }},
@@ -86,61 +95,73 @@
       general_quick_search_pages: {{ 'general.quick_search.pages' | t | json }},
       general_quick_search_no_results: {{ 'general.quick_search.no_results' | t | json }},
       collections_general_see_all_subcollections: {{ 'collections.general.see_all_subcollections' | t | json }}
-    };
-    theme.routes = {
+          };
+          theme.routes = {
       cart_url: '{{ routes.cart_url }}',
       cart_add_url: '{{ routes.cart_add_url }}.js',
       cart_change_url: '{{ routes.cart_change_url }}',
       predictive_search_url: '{{ routes.predictive_search_url }}'
-    };
-    theme.settings = {
+          };
+          theme.settings = {
       cart_type: {{ settings.cart_type | json }},
       quickbuy_style: {{ settings.quickbuy_style | json }},
       avoid_orphans: {{ settings.avoid_orphans | json }}
-    };
-    document.documentElement.classList.add('js');
+          };
+          document.documentElement.classList.add('js');
+    </script>
+
+    {{ content_for_header }}
+
+    <script src="https://cdn.tailwindcss.com">
   </script>
+    {% comment %} {{ 'application.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    {{ 'application.js' | asset_url | script_tag }}
 
-  {{ content_for_header }}
-</head>
 
-<body class="template-{{ template | split: '.' | first | handle }}
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body class="template-{{ template | split: '.' | first | handle }}
     {%- if template.suffix %} template-suffix-{{ template.suffix }}{% endif -%}
     {%- if settings.swatch_enabled %} swatch-method-{{ settings.swatch_method }} swatch-style-{{ settings.swatch_style }}{% endif -%}
     " data-cc-animate-timeout="0">
 
-  {%- if settings.animations_enabled_desktop -%}
-    <script>
-      if ('IntersectionObserver' in window) {
+    {%- if settings.animations_enabled_desktop -%}
+      <script>
+              if ('IntersectionObserver' in window) {
         document.body.classList.add("cc-animate-enabled");
-      }
-    </script>
-  {%- endif -%}
+              }
+      </script>
+    {%- endif -%}
 
-  <a class="skip-link visually-hidden" href="#content">{{ 'general.accessibility_labels.skip_to_content' | t }}</a>
+    <a class="skip-link visually-hidden" href="#content">{{ 'general.accessibility_labels.skip_to_content' | t }}</a>
 
   {% section 'announcement-bar' %}
-  {% section 'header' %}
-  {% section 'store-messages' %}
+    {% comment %} {% section 'header' %} {% endcomment %}
+    {% section 'custom-header' %}
 
-  <main id="content" role="main">
-    <div class="container cf">
+    {% section 'store-messages' %}
 
-      {{ content_for_layout }}
+    <main id="content" role="main">
+      <div class="container cf">
 
-    </div><!-- /.container -->
-  </main><!-- /#content -->
+        {{ content_for_layout }}
 
-  {% if request.path != '/challenge' %}
-    <div id="pagefooter">
-      {% section 'cross-page-promos' %}
-      {% section 'footer' %}
-    </div>
+      </div>
+    <!-- /.container -->
+    </main>
+    <!-- /#content -->
 
-    {% section 'popup' %}
-  {% endif %}
+    {% if request.path != '/challenge' %}
+      <div id="pagefooter">
+        {% section 'cross-page-promos' %}
+        {% section 'footer' %}
+      </div>
 
-  {{ 'vendor.min.js'  | asset_url | script_tag }}
-  {{ 'theme.js'  | asset_url | script_tag }}
-</body>
+      {% section 'popup' %}
+    {% endif %}
+
+    {{ 'vendor.min.js' | asset_url | script_tag }}
+    {{ 'theme.js' | asset_url | script_tag }}
+  </body>
 </html>
