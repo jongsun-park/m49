@@ -1082,7 +1082,7 @@
           "1478526647261"
         ],
         "settings": {
-          "visibility": "all"
+          "visibility": ""
         }
       },
       "footer": {
@@ -1134,24 +1134,21 @@
           "1478526632860": {
             "type": "announcement",
             "settings": {
-              "text": "<p>Welcome to our store<\/p>"
-            }
-          },
-          "1478526632861": {
-            "type": "announcement",
-            "settings": {
-              "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+              "text": "<p>Order Now for Next Day Delivery <a href=\"#\" title=\"#\">Learn More<\/a><\/p>"
             }
           }
         },
         "block_order": [
-          "1478526632860",
-          "1478526632861"
+          "1478526632860"
+        ],
+        "custom_css": [
+
         ],
         "settings": {
-          "announcement_bar_col": "#001d7c",
+          "announcement_bar_col": "#004289",
           "announcement_text_col": "#ffffff",
-          "message_font_size": 14,
+          "message_font_size": 12,
+          "announcement_bar_icon": "clock",
           "show_social_icons": true,
           "menu": "",
           "show_country_selector": true,
