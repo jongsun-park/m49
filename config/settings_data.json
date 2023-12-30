@@ -1165,7 +1165,7 @@
           "announcement_text_col": "#ffffff",
           "message_font_size": 12,
           "announcement_bar_icon": "clock",
-          "show_social_icons": true,
+          "show_social_icons": false,
           "menu": "",
           "show_country_selector": true,
           "show_language_selector": true
