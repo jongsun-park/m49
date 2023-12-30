@@ -45,12 +45,22 @@
         "show_view_all": true,
         "full_width": true
       }
+    },
+    "4aa9f7bb-c796-4acd-975e-32399fb533c6": {
+      "type": "custom-newsletter",
+      "settings": {
+        "title": "join our Newsletter",
+        "subheading": "<p>Be the first to know about our offers, events &  new arrivals.<\/p>",
+        "color_bg": "#004289",
+        "newsletter_cover": "shopify:\/\/shop_images\/newsletter-cover.jpg"
+      }
     }
   },
   "order": [
     "f522f00b-d89b-41f2-a18e-7c02da2aadaf",
     "b4c8cc72-48f9-4056-932d-e1e062134f5a",
     "3c4bd7b9-31aa-42aa-9b38-94db8249c1c8",
-    "65af5789-bc7c-4a01-b679-5c9b46eececf"
+    "65af5789-bc7c-4a01-b679-5c9b46eececf",
+    "4aa9f7bb-c796-4acd-975e-32399fb533c6"
   ]
 }
