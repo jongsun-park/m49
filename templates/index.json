@@ -1,16 +1,35 @@
 {
   "sections": {
-    "163592870141219e2f": {
-      "type": "featured-blog",
-      "disabled": true,
+    "f522f00b-d89b-41f2-a18e-7c02da2aadaf": {
+      "type": "custom-collection-2",
       "settings": {
-        "title": "Blog posts",
-        "blog": "",
-        "post_limit": 3,
-        "show_author": true,
-        "show_date": true,
-        "show_excerpts": true,
-        "crop_ratio": "1.78"
+        "featured_collection_l": "fishing",
+        "featured_collection_l_title": "everything you need",
+        "featured_collection_l_description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "featured_collection_l_button_text": "Shop Fishing",
+        "featured_collection_r": "outdoor",
+        "featured_collection_r_title": "on an adventure",
+        "featured_collection_r_description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "featured_collection_r_button_text": "Shop Outdoor"
+      }
+    },
+    "b4c8cc72-48f9-4056-932d-e1e062134f5a": {
+      "type": "custom-ups-bar",
+      "settings": {
+        "ups_bar_col_1_text": "28 Day Returns",
+        "ups_bar_col_2_text": "28 Day Returns",
+        "ups_bar_col_3_text": "Irish Family Business Since 1984"
+      }
+    },
+    "3c4bd7b9-31aa-42aa-9b38-94db8249c1c8": {
+      "type": "custom-collection-3",
+      "settings": {
+        "collection_1": "hiking-essentials",
+        "collection_1_description": "Nullan quis risus eget urna mollis ornare vel eu leo.",
+        "collection_2": "accessories",
+        "collection_2_description": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis.",
+        "collection_3": "outdoor-essentials",
+        "collection_3_description": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis."
       }
     },
     "65af5789-bc7c-4a01-b679-5c9b46eececf": {
@@ -26,19 +45,12 @@
         "show_view_all": true,
         "full_width": true
       }
-    },
-    "d00508d3-e79b-4316-a017-6b4cc0ddaf09": {
-      "type": "newsletter",
-      "settings": {
-        "title": "join our Newsletter",
-        "subheading": "<p>Be the first to know about our offers, events &  new arrivals<\/p>",
-        "color_bg": "#013299"
-      }
     }
   },
   "order": [
-    "163592870141219e2f",
-    "65af5789-bc7c-4a01-b679-5c9b46eececf",
-    "d00508d3-e79b-4316-a017-6b4cc0ddaf09"
+    "f522f00b-d89b-41f2-a18e-7c02da2aadaf",
+    "b4c8cc72-48f9-4056-932d-e1e062134f5a",
+    "3c4bd7b9-31aa-42aa-9b38-94db8249c1c8",
+    "65af5789-bc7c-4a01-b679-5c9b46eececf"
   ]
 }
