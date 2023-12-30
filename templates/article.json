@@ -1,4 +1,50 @@
 {
-  "sections": { "main": { "type": "custom-article", "settings": {} } },
-  "order": ["main"]
+  "sections": {
+    "main": {
+      "type": "custom-article",
+      "settings": {
+        "sidebar_links": "sidebar"
+      }
+    },
+    "5a9de151-74c4-4ea8-b404-35989968e3c0": {
+      "type": "custom-newsletter",
+      "settings": {
+        "title": "join our Newsletter",
+        "subheading": "<p>Be the first to know about our offers, events &  new arrivals.<\/p>",
+        "color_bg": "#004289",
+        "newsletter_cover": "shopify:\/\/shop_images\/newsletter-cover.jpg"
+      }
+    },
+    "96e841f1-cc30-4f7e-9891-8befcbea561d": {
+      "type": "custom-icons-banner",
+      "settings": {
+        "title": "Quisque velit nisi-",
+        "heading": "\"PELLENTESQUE IN IPSUM ID ORCI PORTA DAPIBUS.\"",
+        "icon1_title": "WE love outdoors",
+        "icon1_description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "icon2_title": "Sustainable",
+        "icon2_description": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.",
+        "icon3_title": "based in IRELAND",
+        "icon3_description": "Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.",
+        "icon4_title": "something",
+        "icon4_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "link": ""
+      }
+    },
+    "6e7e97f0-604e-4946-9103-49701e7af372": {
+      "type": "custom-ups-bar",
+      "settings": {
+        "ups_bar_col_1_text": "28 Day Returns",
+        "ups_bar_col_2_text": "28 Day Returns",
+        "ups_bar_col_3_text": "Irish Family Business Since 1984",
+        "fullwidth": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5a9de151-74c4-4ea8-b404-35989968e3c0",
+    "96e841f1-cc30-4f7e-9891-8befcbea561d",
+    "6e7e97f0-604e-4946-9103-49701e7af372"
+  ]
 }
