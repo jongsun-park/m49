@@ -16,6 +16,11 @@
         "full_width": false
       }
     },
+    "53dfb277-b9f3-413d-aa3b-29e344889044": {
+      "type": "custom-product-banner",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-collection",
       "disabled": true,
@@ -88,6 +93,7 @@
   },
   "order": [
     "bbf0b932-0ef6-4594-a346-8ef5f51be523",
+    "53dfb277-b9f3-413d-aa3b-29e344889044",
     "main",
     "caf7e59e-2452-469f-a2e3-207886df9a32",
     "3309d310-38c0-4a1b-b136-76ed8bee7108",
