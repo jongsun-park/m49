@@ -1250,7 +1250,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "* {font-family: 'IBM Plex Sans', sans-serif;}"
+      "\/* Override font family settings *\/* {font-family: \"IBM Plex Sans\", sans-serif!important;}"
     ]
   }
 }
