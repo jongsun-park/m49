@@ -2,8 +2,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-<link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+<link
+  rel="preconnect"
+  href="https://cdn.shopify.com"
+  crossorigin>
+<link
+  rel="preconnect"
+  href="https://fonts.shopify.com"
+  crossorigin>
 <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
 
 {%- liquid
@@ -18,25 +24,51 @@
 -%}
 
 {%- unless base_font.system? -%}
-  <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    as="font"
+    href="{{ base_font | font_url }}"
+    type="font/woff2"
+    crossorigin>
 {%- endunless -%}
 
 {%- unless nav_font.system? -%}
-  <link rel="preload" as="font" href="{{ nav_font | font_url }}" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    as="font"
+    href="{{ nav_font | font_url }}"
+    type="font/woff2"
+    crossorigin>
 {%- endunless -%}
 
 {%- unless heading_font.system? -%}
-  <link rel="preload" as="font" href="{{ heading_font | font_url }}" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    as="font"
+    href="{{ heading_font | font_url }}"
+    type="font/woff2"
+    crossorigin>
 {%- endunless -%}
 
 {%- unless logo_font.system? -%}
-  <link rel="preload" as="font" href="{{ logo_font | font_url }}" type="font/woff2" crossorigin>
+  <link
+    rel="preload"
+    as="font"
+    href="{{ logo_font | font_url }}"
+    type="font/woff2"
+    crossorigin>
 {%- endunless -%}
 
-<link rel="preload" href="{{ 'vendor.min.js' | asset_url }}" as="script">
-<link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
+<link
+  rel="preload"
+  href="{{ 'vendor.min.js' | asset_url }}"
+  as="script">
+<link
+  rel="preload"
+  href="{{ 'theme.js' | asset_url }}"
+  as="script">
 
-{%- if canonical_url != blank  -%}
+{%- if canonical_url != blank -%}
   <link rel="canonical" href="{{ canonical_url }}" />
 {%- endif -%}
 
@@ -47,7 +79,10 @@
       assign image_type = 'svg+xml'
     endif
   -%}
-  <link rel="icon" href="{{ settings.favicon | image_url: width: 48, height: 48 }}" type="image/{{ image_type }}">
+  <link
+    rel="icon"
+    href="{{ settings.favicon | image_url: width: 48, height: 48 }}"
+    type="image/{{ image_type }}">
 {%- endif -%}
 
 {%- if page_description -%}

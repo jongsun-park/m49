@@ -10,7 +10,7 @@
 <html lang="{{ request.locale.iso_code }}" dir="{{ lang_dir }}">
   <head>
     <!-- Symmetry 5.6.0 -->
-
+    
     <title>
       {{ page_title }}{% if current_tags %}
         {% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}
@@ -112,9 +112,9 @@
 
     {{ content_for_header }}
 
-    <script src="https://cdn.tailwindcss.com">
   </script>
-    {% comment %} {{ 'application.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+    {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
 
     {% render 'boost-sd-fallback' %}
