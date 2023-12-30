@@ -6,37 +6,40 @@
 </style>
 
 <!-- TODO ICON SELELCTOR -->
-<div class="custom-icon-banner max-w-[1440px] px-5 mx-auto mb-6 py-6 flex flex-col gap-6 md:gap-12 items-center">
-  <span class="text-center font-bold">{{ section.settings.title | escape }}</span>
-  <h2 class="text-4xl md:text-6xl font-bold text-center max-w-[24ch]">{{ section.settings.heading | escape }}</h2>
+<div class="bg-[#F5F6F4] w-full -my-6" data-cc-animate>
+  <div class="custom-icon-banner max-w-[1440px] px-5 mx-auto mb-6 py-6 flex flex-col gap-6 md:gap-12 items-center">
+    <span class="text-center font-bold">{{ section.settings.title | escape }}</span>
+    <h2 class="text-4xl md:text-6xl font-bold text-center max-w-[24ch]">{{ section.settings.heading | escape }}</h2>
 
-  <div class="grid grid-cols-2 md:grid-cols-4">
-    <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-      <div>{% render 'icon-location-big' %}</div>
-      <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon1_title }}</div>
-      <div class="text-center">{{ section.settings.icon1_description }}</div>
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
+        <div>{% render 'icon-location-big' %}</div>
+        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon1_title }}</div>
+        <div class="text-center">{{ section.settings.icon1_description }}</div>
+      </div>
+      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
+        <div>{% render 'icon-planet-earth' %}</div>
+        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon2_title }}</div>
+        <div class="text-center">{{ section.settings.icon2_description }}</div>
+      </div>
+      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
+        <div>{% render 'icon-saint-patrick' %}</div>
+        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon3_title }}</div>
+        <div class="text-center">{{ section.settings.icon3_description }}</div>
+      </div>
+      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
+        <div>{% render 'icon-knitting' %}</div>
+        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon4_title }}</div>
+        <div class="text-center">{{ section.settings.icon4_description }}</div>
+      </div>
     </div>
-    <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-      <div>{% render 'icon-planet-earth' %}</div>
-      <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon2_title }}</div>
-      <div class="text-center">{{ section.settings.icon2_description }}</div>
-    </div>
-    <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-      <div>{% render 'icon-saint-patrick' %}</div>
-      <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon3_title }}</div>
-      <div class="text-center">{{ section.settings.icon3_description }}</div>
-    </div>
-    <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-      <div>{% render 'icon-knitting' %}</div>
-      <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ section.settings.icon4_title }}</div>
-      <div class="text-center">{{ section.settings.icon4_description }}</div>
-    </div>
+
+    {% if section.settings.link != blank %}
+      <a href="{{  section.settings.link }}" class="py-4 px-12 border-solid border-2 border-[#004289] text-[#004289] font-bold hover:text-white hover:bg-[#004289] transition duration-150">Learn More</a>
+    {% endif %}
+
+
   </div>
-
-  {% if section.settings.link != blank %}
-    <a href="{{  section.settings.link }}" class="py-4 px-12 border-solid border-2 border-[#004289] text-[#004289] font-bold hover:text-white hover:bg-[#004289] transition duration-150">Learn More</a>
-  {% endif %}
-
 
 </div>
 

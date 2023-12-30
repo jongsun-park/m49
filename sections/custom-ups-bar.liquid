@@ -17,7 +17,7 @@
 {% endif %}
 
 <!-- TODO ICON SELELCTOR -->
-<div class="custom-ups-bar-{{ section.id }} max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-4 md:space-y-0 mb-6 font-bold">
+<div class="custom-ups-bar-{{ section.id }} max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-4 md:space-y-0 mb-6 font-bold" data-cc-animate>
   <div class="custom-ups-bar__container space-y-4 md:space-y-0 p-5 w-full flex flex-col md:flex-row justify-around">
     <div class="flex flex-row gap-2 items-center text-xl">
       {% render 'icon-refresh' %} {{ section.settings.ups_bar_col_1_text | escape }}
