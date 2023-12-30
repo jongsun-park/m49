@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "shopify": "shopify theme dev --live-reload=hot-reload",
+    "shopify": "shopify theme dev",
     "tailwindcss": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch"
   },
   "keywords": [],

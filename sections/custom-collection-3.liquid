@@ -1,0 +1,118 @@
+<style>
+  .collection_link_button {
+    color: #004289;
+    background-color: white;
+  }
+
+  .collection_link_button:hover {
+    color: white;
+    background-color: #004289;
+  }
+
+  .collection__content {
+  ;
+  /* background-color: #0468DB; */
+}
+</style>
+
+<div class="custom-collection-3 max-w-[1440px] mx-auto mb-6">
+
+  <div class="custom-collection-3__container px-5 grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-6">
+    <!-- Collection 1 -->
+    <div class="bg-gray-100 flex flex-row relative">
+      {% assign collection_1 = section.settings.collection_1 %}
+      <div class="collection__image w-full md:w-1/2 h-full">
+        <img
+          class="w-full h-full object-cover"
+          src="{{ collection_1.image | image_url: width: 740 }}"
+          alt="{{ collection_1.alt }}">
+      </div>
+      <div class="collection__content bg-black/25 md:bg-[#0468DB] text-white w-full md:w-1/2 flex flex-col justify-center p-10 space-y-4 items-start absolute md:relative inset-0">
+        <h2 class="text-white text-3xl font-bold">{{ collection_1.title }}</h2>
+        <p>{{ section.settings.collection_1_description }}</p>
+        <a class="uppercase font-bold py-2 px-4 border-1-white hover:bg-white hover:text-[#0468DB] border-solid border-2 border-white transition duration-150" href="{{ collection_1.url }}">SHOP {{ collection_1.title }}</a>
+      </div>
+    </div>
+
+    <!-- Collection 3: Outdoor Essentials -->
+    <div class="md:row-span-2 md:aspect-square bg-gray-100 relative">
+      {% assign collection_3 = section.settings.collection_3 %}
+      <div class="collection__image w-full h-full">
+        <img
+          class="w-full h-full object-cover"
+          src="{{ collection_3.image | image_url: width: 740 }}"
+          alt="{{ collection_3.alt }}">
+      </div>
+      <div class="collection__content text-white w-full flex flex-col justify-center items-start md:items-center absolute inset-0 bg-black/25 p-10 space-y-4 md:space-y-8 md:p-24">
+        <h2 class="text-white text-3xl md:text-6xl font-bold align-center">{{ collection_3.title }}</h2>
+        <p class="text-md md:align-center">{{ section.settings.collection_3_description }}</p>
+        <a class="uppercase font-bold py-2 px-4 border-1-white hover:bg-white hover:text-[#0468DB] border-solid border-2 border-white transition duration-150" href="{{ collection_3.url }}">SHOP {{ collection_3.title }}</a>
+      </div>
+    </div>
+
+
+    <!-- Collection 2 -->
+    <div class="bg-gray-100 flex flex-row relative">
+      {% assign collection_2 = section.settings.collection_2 %}
+      <div class="collection__image w-full md:w-1/2 h-full">
+        <img
+          class="w-full h-full object-cover"
+          src="{{ collection_2.image | image_url: width: 740 }}"
+          alt="{{ collection_2.alt }}">
+      </div>
+      <div class="collection__content bg-black/25 md:bg-[#004289] text-white w-full md:w-1/2 flex flex-col justify-center p-10 space-y-4 items-start absolute md:relative inset-0">
+        <h2 class="text-white text-3xl font-bold">{{ collection_2.title }}</h2>
+        <p>{{ section.settings.collection_2_description }}</p>
+        <a class="uppercase font-bold py-2 px-4 border-1-white hover:bg-white hover:text-[#0468DB] border-solid border-2 border-white transition duration-150" href="{{ collection_2.url }}">SHOP {{ collection_2.title }}</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection Banner 3",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection_1",
+        "label": "Colleciton 1"
+      },
+      {
+        "type": "text",
+        "id": "collection_1_description",
+        "label": "Colleciton 1 Description",
+        "default": "Nullan quis risus eget urna mollis ornare vel eu leo."
+      },
+      {
+        "type": "collection",
+        "id": "collection_2",
+        "label": "Colleciton 2"
+      },
+      {
+        "type": "text",
+        "id": "collection_2_description",
+        "label": "Colleciton 2 Description",
+        "default": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis."
+      }, {
+        "type": "collection",
+        "id": "collection_3",
+        "label": "Colleciton 3"
+      }, {
+        "type": "text",
+        "id": "collection_3_description",
+        "label": "Colleciton 3 Description",
+        "default": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis."
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Collection Banner 3"
+      }
+    ]
+  }
+{% endschema %}
