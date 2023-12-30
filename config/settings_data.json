@@ -1187,7 +1187,7 @@
       "popup": {
         "type": "popup",
         "settings": {
-          "mode": "enabled",
+          "mode": "disabled",
           "popup_delay_seconds": 4,
           "popup_dismiss_for_days": 2,
           "position": "bottom-right",
@@ -1250,7 +1250,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "\/* Override font family settings *\/* {font-family: \"IBM Plex Sans\", sans-serif!important;}"
+      "\/* Override font family settings *\/* {font-family: \"IBM Plex Sans\", sans-serif !important;}"
     ]
   }
 }
