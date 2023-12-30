@@ -1220,6 +1220,19 @@
           "icon_strategy": "icons_cart_search",
           "cart_icon": "basket"
         }
+      },
+      "custom-footer": {
+        "type": "custom-footer",
+        "settings": {
+          "footer_image": "shopify:\/\/shop_images\/logo-removebg-preview.png",
+          "info_menu": "info",
+          "copyright_menu": "copyright",
+          "tel": "012 3456789",
+          "email": "hello@domain.com",
+          "address": "<p>Lorem Ipsum Outdoor <br\/>Unit 1, Lipsum,<br\/>City, Co. County<\/p>",
+          "show_social_icons": true,
+          "built_by": "shopify:\/\/shop_images\/sf9_logo_centered.png"
+        }
       }
     },
     "content_for_index": [

@@ -18,7 +18,8 @@
       "settings": {
         "ups_bar_col_1_text": "28 Day Returns",
         "ups_bar_col_2_text": "28 Day Returns",
-        "ups_bar_col_3_text": "Irish Family Business Since 1984"
+        "ups_bar_col_3_text": "Irish Family Business Since 1984",
+        "fullwidth": false
       }
     },
     "3c4bd7b9-31aa-42aa-9b38-94db8249c1c8": {
@@ -76,7 +77,8 @@
       "settings": {
         "ups_bar_col_1_text": "28 Day Returns",
         "ups_bar_col_2_text": "28 Day Returns",
-        "ups_bar_col_3_text": "Irish Family Business Since 1984"
+        "ups_bar_col_3_text": "Irish Family Business Since 1984",
+        "fullwidth": true
       }
     }
   },
