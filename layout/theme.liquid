@@ -156,8 +156,9 @@
 
     {% if request.path != '/challenge' %}
       <div id="pagefooter">
-        {% section 'cross-page-promos' %}
-        {% section 'footer' %}
+      {% section 'cross-page-promos' %}
+        <!-- {% section 'footer' %} -->
+        {% section 'custom-footer' %}
       </div>
 
       {% section 'popup' %}

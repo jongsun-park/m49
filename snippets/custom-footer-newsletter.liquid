@@ -1,0 +1,46 @@
+<style>
+  .footer-newsletter-heading {
+    color: white !important;
+  }
+</style>
+
+<h3 class="footer-newsletter-heading text-xl uppercase font-bold mb-4">join our Newsletter</h3>
+<p class="text-white">Be the first to know about Our offers, events, new arrivals & sales.</p>
+
+{% form 'customer'
+  , id: 'footer_newsletter_signup' %}
+  {% if form.posted_successfully? %}
+    <div class="signup-form__response signup-form__response--success">
+      <h4>{{ 'layout.signup.post_success' | t }}</h4>
+    </div>
+  {% else %}
+    {% if form.errors %}
+      <div class="signup-form__response signup-form__response--error">
+        {% for field in form.errors %}
+          <p class="error">{{ field | capitalize }} - {{ form.errors.messages[field] }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <input
+      type="hidden"
+      name="contact[tags]"
+      value="prospect,newsletter" />
+    <div>
+      <div>
+        <div class="space-y-2 mt-6">
+          <label for="signup-form__email" class="text-white">Email Address</label>
+          <input
+            type="email"
+            id="signup-form__email"
+            class="w-full"
+            name="contact[email]"
+            aria-label="{{ 'layout.signup.input_label' | t | escape }}"
+            required />
+        </div>
+        <button class="bg-[#032C58] p-3 text-white w-full mt-2" type="submit">
+          {{- 'layout.signup.submit' | t -}}
+        </button>
+      </div>
+    </div>
+  {% endif %}
+{% endform %}

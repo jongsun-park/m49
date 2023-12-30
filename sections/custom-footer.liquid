@@ -1,0 +1,122 @@
+<style>
+  .copyright a::before {
+    content: "|";
+    padding-left: 1em;
+    padding-right: 1.2em;
+  }
+</style>
+
+<div data-section-type="footer" class="custom-footer w-full px-12 pt-4 pb-10 lg:px-0 lg:max-w-[90vw] lg:ml-auto">
+  <div class="custom-footer__container w-full grid grid-cols-1 md:grid-cols-4 space-x-4 space-y-8 md:space-y-0">
+    <div>
+      <img
+        class="mx-auto max-w-[150px]"
+        src="{{ section.settings.footer_image | image_url: width: 300 }}"
+        alt="{{ section.settings.footer_image.alt }}">
+
+    </div>
+    <div>
+      <h2 class="text-xl uppercase font-bold mb-4">Info</h2>
+      <ul>
+        {% for link in linklists[section.settings.info_menu].links %}
+          <li class="list-none text-sm">
+            <a class="" href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-xl uppercase font-bold mb-4">Contact</h2>
+      <div>
+        <div>
+          <span class="min-w-[8ch] inline-block">Tel</span>
+          <span class="text-[#004289] font-bold">{{ section.settings.tel }}</span>
+        </div>
+        <div>
+          <span class="min-w-[8ch] inline-block">E-mail</span>
+          <span class="text-[#004289] font-bold">
+            {{ section.settings.email }}</span>
+        </div>
+      </div>
+      <address>
+        {{ section.settings.address }}
+      </address>
+      <div>
+        <h3 class="uppercase font-bold mb-4">Follow Us</h3>
+        <div class="flex flex-row space-x-2 items-center">
+          <!-- Social Icons -->
+          {% if section.settings.show_social_icons != blank %}
+            {% render 'custom-social-icons' %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col p-8 bg-[#004289]">
+      {% render 'custom-footer-newsletter' %}
+    </div>
+  </div>
+</div>
+<div class="copyright flex flex-row justify-around py-10 border-solid border-t-2 border-gray-200">
+  <div class="text-sm flex flex-row align-center items-center">
+    <span>
+      Copyright © StudioForty9
+    </span>
+    {% for link in linklists[section.settings.copyright_menu].links %}
+      <a class="" href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+  <div class="flex flex-row align-center space-x-2 items-center">
+    <span>Built by</span>
+    <img
+      class="inline max-w-[150px]"
+      src="{{ section.settings.built_by | image_url: width: 300 }}"
+      alt="{{ section.settings.built_by.alt }}">
+  </div>
+</div></div>{% schema %}
+{
+  "name": "Custom Footer",
+  "class": "custom-section-footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer_image",
+      "label": "Footer Image"
+    },
+    {
+      "type": "link_list",
+      "id": "info_menu",
+      "label": "Info Link List"
+    },
+    {
+      "type": "link_list",
+      "id": "copyright_menu",
+      "label": "Copyright Link List"
+    },
+    {
+      "type": "text",
+      "id": "tel",
+      "label": "Contact Tel",
+      "default": "012 3456789"
+    }, {
+      "type": "text",
+      "id": "email",
+      "label": "Contact Email",
+      "default": "hello@domain.com"
+    }, {
+      "type": "richtext",
+      "id": "address",
+      "label": "Contact Address",
+      "default": "<p>Lorem Ipsum Outdoor \nUnit 1, Lipsum,\nCity, Co. County</p>"
+    }, {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Show Social Icons",
+      "default": true
+    }, {
+      "type": "image_picker",
+      "id": "built_by",
+      "label": "Built By Logo"
+    }
+  ]
+}{% endschema %}

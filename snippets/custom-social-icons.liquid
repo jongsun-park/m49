@@ -1,0 +1,97 @@
+<style>
+  .custom-social-links {
+    margin: 0 !important;
+  }
+  .custom-social-links__list li {
+    list-style: none;
+  }
+
+  .custom-social-links__list li a {
+    color: white !important;
+    width: 50px;
+    height: 50px;
+
+    background-color: #004289;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+</style>
+
+<div class="custom-social-links">
+  <ul class="custom-social-links__list flex flex-row gap-2">
+    {% if settings.social_twitter_url != blank %}
+      <li>
+        <a
+          aria-label="Twitter"
+          class="twitter"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_twitter_url }}">{% render 'svg-twitter' %}</a>
+      </li>
+    {% endif %}
+    {% if settings.social_facebook_url != blank %}
+      <li>
+        <a
+          aria-label="Facebook"
+          class="facebook"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_facebook_url }}">{% render 'svg-facebook' %}</a>
+      </li>
+    {% endif %}
+    {% if settings.social_youtube_url != blank %}
+      <li>
+        <a
+          aria-label="Youtube"
+          class="youtube"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_youtube_url }}">{% render 'svg-youtube' %}</a>
+      </li>
+    {% endif %}
+    {% if settings.social_vimeo_url != blank %}
+      <li>
+        <a
+          aria-label="Vimeo"
+          class="vimeo"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_vimeo_url }}">{% render 'svg-vimeo' %}</a>
+      </li>
+    {% endif %}
+    {% if settings.social_instagram_url != blank %}
+      <li>
+        <a
+          aria-label="Instagram"
+          class="instagram"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_instagram_url }}">{% render 'svg-instagram' %}</a>
+      </li>
+    {% endif %}
+    {% if settings.social_pinterest_url != blank %}
+      <li>
+        <a
+          aria-label="Pinterest"
+          class="pinterest"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_pinterest_url }}">{% render 'svg-pinterest' %}</a>
+      </li>
+    {% endif %}
+    {% if settings.social_tiktok_url != blank %}
+      <li>
+        <a
+          aria-label="Tiktok"
+          class="tiktok"
+          target="_blank"
+          rel="noopener"
+          href="{{ settings.social_tiktok_url }}">{% render 'svg-tiktok' %}</a>
+      </li>
+    {% endif %}
+
+
+  </ul>
+</div>

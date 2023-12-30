@@ -5,8 +5,19 @@
   }
 </style>
 
+{% if section.settings.fullwidth == true %}
+  <style>
+    .custom-ups-bar-{{ section.id }} {
+      background-color: #004289;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: 100%;
+    }
+  </style>
+{% endif %}
+
 <!-- TODO ICON SELELCTOR -->
-<div class="custom-ups-bar max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-4 md:space-y-0 mb-6 font-bold">
+<div class="custom-ups-bar-{{ section.id }} max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-4 md:space-y-0 mb-6 font-bold">
   <div class="custom-ups-bar__container space-y-4 md:space-y-0 p-5 w-full flex flex-col md:flex-row justify-around">
     <div class="flex flex-row gap-2 items-center text-xl">
       {% render 'icon-refresh' %} {{ section.settings.ups_bar_col_1_text | escape }}
@@ -40,6 +51,11 @@
         "id": "ups_bar_col_3_text",
         "label": "UPS Bar Text 3",
         "default": "Irish Family Business Since 1984"
+      }, {
+        "type": "checkbox",
+        "id": "fullwidth",
+        "label": "Banner Full Width",
+        "default": false
       }
     ],
     "presets": [
