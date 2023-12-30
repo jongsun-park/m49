@@ -1088,38 +1088,50 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "1601372812538": {
+          "d04e5e40-7f51-4b18-b095-651fb48baec7": {
             "type": "text",
             "settings": {
-              "title": "Talk about your store",
-              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>",
-              "image_width": 55,
-              "show_social_icons": true,
-              "soc_icons_large": true
+              "title": "",
+              "text": "",
+              "image": "shopify:\/\/shop_images\/logo-removebg-preview.png",
+              "image_width": 200,
+              "show_social_icons": false,
+              "soc_icons_large": false
             }
           },
-          "1601372709037": {
+          "39042fb7-f8a5-444c-9050-904522f59c0d": {
             "type": "menu",
             "settings": {
-              "title": "Quick links",
-              "menu": "footer"
+              "title": "Info",
+              "menu": "info"
             }
           },
-          "1601372771635": {
+          "2259cb04-ad47-4090-9a42-b227242262a3": {
+            "type": "text",
+            "settings": {
+              "title": "Contact",
+              "text": "<p><strong>Tel           <\/strong>012 3456789<\/p><p><strong>E-mail    <\/strong>hello@domain.com<\/p><p><\/p><p>Lorem Ipsum Outdoor <br\/>Unit 1, Lipsum,<br\/>City, Co. County<br\/><br\/><br\/>Follow Us<\/p>",
+              "image_width": 100,
+              "show_social_icons": true,
+              "soc_icons_large": false
+            }
+          },
+          "70f7732a-5836-4d9d-b665-f886e9842853": {
             "type": "newsletter",
             "settings": {
-              "title": "Newsletter",
-              "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
-              "button_style": "primary",
+              "title": "Join Our Newsletter",
+              "text": "<p>Be the first to know about Our offers, events, new arrivals & sales.<\/p>",
+              "button_style": "secondary",
               "show_social_icons": true,
               "soc_icons_large": false
             }
           }
         },
         "block_order": [
-          "1601372812538",
-          "1601372709037",
-          "1601372771635"
+          "d04e5e40-7f51-4b18-b095-651fb48baec7",
+          "39042fb7-f8a5-444c-9050-904522f59c0d",
+          "2259cb04-ad47-4090-9a42-b227242262a3",
+          "70f7732a-5836-4d9d-b665-f886e9842853"
         ],
         "settings": {
           "lower_menu": "",
