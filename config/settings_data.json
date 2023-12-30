@@ -1247,5 +1247,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "* {font-family: 'IBM Plex Sans', sans-serif;}"
+    ]
   }
 }
