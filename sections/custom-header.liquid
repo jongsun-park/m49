@@ -1,155 +1,42 @@
-<style>
-  /* Custom CSS */
-  .navigation__link,
-  .cart-link__label {
-    font-family: 'IBM Plex Sans'
-    , sans-serif;
-    font-weight: bold;
-  }
+<header data-cc-animate>
+  <div class="header-logo__container">
+    <a href="{{ routes.root_url }}" title="{{ shop.name }}">
+      <img
+        src="{{ section.settings.logo |  image_url: width: "400px" }}"
+        alt="{{ section.settings.logo.alt }}"
+        class="header-logo__image">
+    </a>
+  </div>
+  <div class="header-menu">
+    <div class="header-search__container">
+      <form action="{{ routes.search_url }}" method="get">
 
-  .navigation__item:last-child {
-    color: #DA394C;
-  }
-
-  .navigation.navigation--main {
-    border-bottom: none;
-  }
-</style>
-
-<div x-data="{ mobileMenuOpen: false}">
-  <header class="flex flex-row align-center items-center justify-between space-x-20 py-4 pr-10">
-    <div class="header-logo min-w-[60px] max-w-[200px]">
-      <!-- Logo Link -->
-      <a
-        class="logo__link"
-        href="{{ routes.root_url }}"
-        title="{{ shop.name }}">
-        {%- if section.settings.logo != blank -%}
-          {%- capture img_size -%}{{ section.settings.logo_img_width_int | times: 2 }}x{%- endcapture -%}
-          <img
-            class="logo__image"
-            src="{{ section.settings.logo | img_url: img_size }}"
-            alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
-            itemprop="logo"
-            width="{{ section.settings.logo.width }}"
-            height="{{ section.settings.logo.height }}" />
-
-          {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
-            <img
-              class="logo__image-transparent"
-              src="{{ section.settings.transparent_logo | img_url: img_size }}"
-              alt="{{ section.settings.transparent_logo.alt | escape }}"
-              width="{{ section.settings.transparent_logo.width }}"
-              height="{{ section.settings.transparent_logo.height }}"
-              aria-hidden="true" />
-          {%- endif -%}
-
-        {%- else -%}
-          <span class="logotext">{{ shop.name }}</span>
-        {%- endif -%}
-      </a>
+        <input
+          type="search"
+          name="q"
+          placeholder="What are you looking for?">
+        <button type="submit">
+          {% render 'icon-search' %}
+        </button>
+      </form>
     </div>
-    <div class="header-menu hidden md:flex flex-col items-center flex-1 gap-y-2 mx-5" ">
-      <div class="header-search header-search w-full h-10 bg-gray-100 px-3 rounded-md">
-        <!-- Search form -->
-        <form
-          action="{{ routes.search_url }}"
-          method="get"
-          class="flex-auto">
-          <div class="flex flex-row space-x-2 align-center items-center">
-            <input
-              type="search"
-              name="q"
-              placeholder="What are you looking for?"
-              class="flex-1 focus:outline-none bg-transparent text-blue-700 font-bold">
-            <button type="submit" class="hover:bg-gray-100 border-0 w-10 h-10 flex align-center items-center m-0 p-0">
-              {% render 'icon-search' %}
-            </button>
-          </div>
-        </form>
-      </div>
-      <nav class="header-navigation">
-        <!-- Desktop Navigation -->
-        <div id="main-nav">
-          <div
-            class="navigation navigation--main flex flex-row space-x-4"
-            role="navigation"
-            aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
-            <div class="navigation__tier-1-container">
-              {% render 'main-nav-links'
-                , link_list: section.settings.menu_linklist
-                , mobile: false
-                , featured_links: featured_links %}
-
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div class="header-menu__container">
+      {% render 'main-nav-links'
+        , link_list: section.settings.menu_linklist
+        , mobile: false
+        , featured_links: featured_links %}</div>
+  </div>
+  <div class="header-icons">
+    <div>
+      <a href="#" class="favourite-link">
+        {% render 'icon-heart' %}</a>
     </div>
-    <div class="header-icons flex flex-row space-x-4">
-      <!-- Favourites -->
-      <!-- TODO: Set up 3rd party favouite app -->
-      <div class="cursor-pointer flex align-center items-center">{% render 'icon-heart' %}</div>
-      <!-- Cart -->
-      <div>
-        <a href="{{ routes.cart_url }}" class="cart-link">
-          <span class="cart-link__label{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
-            {{- 'layout.header.cart' | t | escape -}}
-          </span>
-          <span class="cart-link__icon">
-            {%- if section.settings.cart_icon == 'basket' -%}
-              {%- render 'svg-basket' -%}
-            {%- elsif section.settings.cart_icon == 'bag' -%}
-              {%- render 'svg-bag' -%}
-            {%- else -%}
-              {%- render 'svg-cart' -%}
-            {%- endif -%}
-            {%- if cart.item_count > 0 -%}
-              <span class="cart-link__count">{{ cart.item_count }}</span>
-            {%- endif -%}
-          </span>
-        </a>
-      </div>
-      <!-- Mobile Menu Open Button -->
-      <div class="cursor-pointer flex md:hidden align-center items-center" x-on:click="mobileMenuOpen = true">{% render 'icon-menu' %}</div>
-    </div>
-
-  </header>
-  <!-- Mobile Button Menu -->
-  <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
-    <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
-      <div class="p-5 divide-y-2 divide-gray-50">
-
-        <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
-        <div class="flex items-center justify-between pb-3">
-          <div>
-            <h1 class="text-lg text-gray-500">Menu</h1>
-          </div>
-          <div class="-mr-2">
-            <button
-              x-on:click="mobileMenuOpen = false"
-              type="button"
-              class="bg-gray p-2 cursor-pointer hover:bg-gray-200 border-0">
-              {% render "icon-close" %}
-            </button>
-          </div>
-        </div>
-
-        <!-- NAVIGATION LINKS FOR MOBILE MENU -->
-        <div class="pt-3">
-          <nav class="grid gap-y-7">
-            {% for link in linklists[section.settings.menu_linklist].links %}
-              <a href="{{ link.url }}" class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
-                {{ link.title }}
-              </a>
-            {% endfor %}
-          </nav>
-        </div>
-      </div>
+    <div>
+      <a href="{{ routes.cart_url }}" class="cart-link">
+        {% render 'svg-cart' %}</a>
     </div>
   </div>
-
-</div>
+</header>
 
 
 {% schema %}
@@ -162,339 +49,11 @@
         "id": "logo",
         "label": "Logo",
         "info": "520 x 200px (recommended)"
-      },
-      {
-        "type": "range",
-        "id": "logo_img_width_int",
-        "min": 30,
-        "max": 500,
-        "step": 5,
-        "unit": "px",
-        "label": "Logo width",
-        "default": 180
-      },
-      {
-        "type": "range",
-        "id": "mobile_logo_img_width_int",
-        "min": 30,
-        "max": 300,
-        "step": 5,
-        "unit": "px",
-        "label": "Mobile logo width",
-        "default": 100
-      },
-      {
-        "type": "checkbox",
-        "id": "logo_h1",
-        "label": "Enable logo <h1> on home page",
-        "info": "For SEO. Deselect only if another section on the home page contains a primary page heading. [Learn more](https://cleancanvas.co.uk/support/symmetry/section-h1-setting)",
-        "default": true
-      }, {
-        "type": "checkbox",
-        "id": "enable_sticky",
-        "label": "Enable sticky header",
-        "default": false
-      }, {
-        "type": "header",
-        "content": "Transparent header"
-      }, {
-        "type": "paragraph",
-        "content": "Home page only. Ensure a full width image section is at the top, like a slideshow."
-      }, {
-        "type": "paragraph",
-        "content": "Store messages will be hidden."
-      }, {
-        "type": "checkbox",
-        "id": "enable_transparent",
-        "label": "Enable transparent header",
-        "default": false
-      }, {
-        "type": "color",
-        "id": "transparent_color",
-        "label": "Text color",
-        "default": "#ffffff"
-      }, {
-        "type": "image_picker",
-        "id": "transparent_logo",
-        "label": "Logo",
-        "info": "Match your main logo size."
-      }, {
-        "type": "header",
-        "content": "Navigation"
       }, {
         "type": "link_list",
         "id": "menu_linklist",
         "label": "Menu",
         "default": "main-menu"
-      }, {
-        "type": "link_list",
-        "id": "menu_linklist_mobile",
-        "label": "Mobile menu",
-        "info": "Select a different menu for mobile. Main menu is used if not selected."
-      }, {
-        "type": "select",
-        "id": "menu_layout",
-        "label": "Menu alignment",
-        "info": "Alignment will switch to 'Underneath' if the links do not fit beside the logo",
-        "options": [
-          {
-            "value": "inline-menu-left",
-            "label": "Left"
-          }, {
-            "value": "inline-menu-center",
-            "label": "Center"
-          }, {
-            "value": "underneath",
-            "label": "Underneath"
-          }
-        ],
-        "default": "underneath"
-      }, {
-        "type": "text",
-        "id": "nav_featured_link",
-        "label": "Featured link",
-        "info": "Enter the title of a link to highlight it in a different color",
-        "default": "Sale"
-      }, {
-        "type": "header",
-        "content": "Mobile navigation"
-      }, {
-        "type": "checkbox",
-        "id": "enable_mobile_promo_carousel",
-        "label": "Enable carousel layout for menu promotions",
-        "info": "Disabled for dropdown menus containing only promotions",
-        "default": true
-      }, {
-        "type": "checkbox",
-        "id": "enable_nav_mob_products",
-        "label": "Enable featured products",
-        "info": "Shows beneath the main menu",
-        "default": false
-      }, {
-        "type": "text",
-        "id": "nav_mob_products_title",
-        "label": "Featured products title",
-        "default": "Best Sellers"
-      }, {
-        "type": "collection",
-        "id": "nav_mob_products_collection",
-        "label": "Featured products collection"
-      }, {
-        "type": "header",
-        "content": "Search"
-      }, {
-        "type": "checkbox",
-        "id": "enable_search",
-        "label": "Enable search",
-        "default": true
-      }, {
-        "type": "text",
-        "id": "search_suggestions_title",
-        "label": "Suggestions title",
-        "info": "Suggestions show when the search is opened."
-      }, {
-        "type": "link_list",
-        "id": "search_suggestions_menu",
-        "label": "Suggestions menu",
-        "info": "Dropdown menus will show as separate rows. Links to collections and products will show images."
-      }, {
-        "type": "header",
-        "content": "Icons"
-      }, {
-        "type": "select",
-        "id": "icon_strategy",
-        "label": "Show icons",
-        "info": "Only icons show on mobile",
-        "options": [
-          {
-            "value": "icons_cart_search",
-            "label": "On cart and search"
-          }, {
-            "value": "icons_all",
-            "label": "On all links"
-          }, {
-            "value": "icons_only",
-            "label": "Only icons, no text"
-          }
-        ],
-        "default": "icons_cart_search"
-      }, {
-        "type": "select",
-        "id": "cart_icon",
-        "label": "Cart icon",
-        "options": [
-          {
-            "value": "bag",
-            "label": "Bag"
-          }, {
-            "value": "basket",
-            "label": "Basket"
-          }, {
-            "value": "cart",
-            "label": "Cart"
-          }
-        ],
-        "default": "basket"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "menu-promotion-small",
-        "name": "Small menu promotion",
-        "settings": [
-          {
-            "type": "paragraph",
-            "content": "Menu promotions are shown in dropdown menus. [Read more](https://cleancanvas.co.uk/support/symmetry/header)"
-          },
-          {
-            "type": "text",
-            "id": "dropdown_link_title",
-            "label": "Link name",
-            "info": "The name of any top-level link"
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          },
-          {
-            "type": "text",
-            "id": "title",
-            "label": "Title"
-          }, {
-            "type": "url",
-            "id": "link_url",
-            "label": "Link URL"
-          }
-        ]
-      }, {
-        "type": "menu-promotion-large",
-        "name": "Wide menu promotion",
-        "settings": [
-          {
-            "type": "paragraph",
-            "content": "Menu promotions are shown in dropdown menus. [Read more](https://cleancanvas.co.uk/support/symmetry/header)"
-          },
-          {
-            "type": "text",
-            "id": "dropdown_link_title",
-            "label": "Link name",
-            "info": "The name of any top-level link"
-          },
-          {
-            "type": "image_picker",
-            "id": "desktop_image",
-            "label": "Desktop image"
-          },
-          {
-            "type": "image_picker",
-            "id": "mobile_image",
-            "label": "Mobile image"
-          }, {
-            "type": "checkbox",
-            "id": "enable_fade",
-            "label": "Enable image fade",
-            "default": false
-          }, {
-            "type": "text",
-            "id": "subheading",
-            "label": "Subheading",
-            "default": "Tell your story"
-          }, {
-            "type": "text",
-            "id": "title",
-            "label": "Heading",
-            "default": "Wide menu promotion"
-          }, {
-            "type": "richtext",
-            "id": "text",
-            "label": "Text",
-            "default": "<p>Pair text with an image to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.<\/p>"
-          }, {
-            "type": "text",
-            "id": "button_1_label",
-            "label": "Button 1",
-            "default": "Shop this"
-          }, {
-            "type": "url",
-            "id": "button_1_link",
-            "label": "Button 1 link"
-          }, {
-            "type": "select",
-            "id": "button_1_style",
-            "label": "Button 1 style",
-            "default": "secondary",
-            "options": [
-              {
-                "label": "Button - primary",
-                "value": "primary"
-              }, {
-                "label": "Button - secondary",
-                "value": "secondary"
-              }, {
-                "label": "Link",
-                "value": "link"
-              }
-            ]
-          }, {
-            "type": "text",
-            "id": "button_2_label",
-            "label": "Button 2",
-            "default": "Shop all"
-          }, {
-            "type": "url",
-            "id": "button_2_link",
-            "label": "Button 2 link"
-          }, {
-            "type": "select",
-            "id": "button_2_style",
-            "label": "Button 2 style",
-            "default": "primary",
-            "options": [
-              {
-                "label": "Button - primary",
-                "value": "primary"
-              }, {
-                "label": "Button - secondary",
-                "value": "secondary"
-              }, {
-                "label": "Link",
-                "value": "link"
-              }
-            ]
-          }, {
-            "type": "select",
-            "id": "image_position",
-            "label": "Image alignment",
-            "default": "right",
-            "options": [
-              {
-                "value": "left",
-                "label": "Left"
-              }, {
-                "value": "right",
-                "label": "Right"
-              }
-            ]
-          }, {
-            "type": "select",
-            "id": "text_alignment",
-            "label": "Text alignment",
-            "default": "center",
-            "options": [
-              {
-                "value": "left",
-                "label": "Left"
-              }, {
-                "value": "center",
-                "label": "Center"
-              }, {
-                "value": "right",
-                "label": "Right"
-              }
-            ]
-          }
-        ]
       }
     ]
   }

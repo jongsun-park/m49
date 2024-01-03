@@ -1,0 +1,115 @@
+/* JONGSUN PARK - Styles for Custom Section & Snippets */
+/* Variables */
+/* TODO: Move to theme settings */
+:root {
+  --primary-color: #0468db;
+  --secondary-color: #004289;
+  --secondary-accent-color: #032c58;
+  --accent-color: #da394c;
+  --light-color: #f5f6f4;
+  --text-color: #333333;
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+}
+
+/* Announcement Bar */
+/* sections/announcement-bar.liquid */
+.announcement__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Header & Navigation */
+/* custom-header.liquid */
+#shopify-section-custom-header {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    .header-logo__container {
+      .header-logo__image {
+        max-width: 140px;
+      }
+    }
+    .header-menu {
+      flex: 1;
+      margin: 1rem 2rem;
+
+      .header-search__container {
+        form {
+          display: flex;
+          gap: 10px;
+          background-color: var(--light-color);
+          border: none;
+          padding: 10px;
+          border-radius: 4px;
+
+          input {
+            flex: 1;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            color: var(--secondary-color);
+            &::placeholder {
+              color: var(--secondary-color);
+            }
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            &:hover {
+              background-color: transparent;
+            }
+            svg {
+              fill: transparent;
+              stroke: var(--secondary-color);
+            }
+          }
+        }
+      }
+    }
+
+    .header-menu {
+      &__container {
+        margin: 0 auto;
+        width: fit-content;
+      }
+
+      ul {
+        display: flex;
+
+        li:last-child a {
+          color: var(--accent-color);
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+
+        a {
+          font-weight: bold;
+          color: var(--text-color);
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+
+    .header-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
+}
+
+//

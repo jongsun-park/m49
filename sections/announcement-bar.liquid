@@ -39,8 +39,7 @@
           <div class="announcement-bar__announcements">
             {%- for block in section.blocks -%}
               <div class="announcement{% unless forloop.first %} announcement--inactive{% endunless %}" {{ block.shopify_attributes }}>
-                <div class="announcement__text flex flex-row space-x-2 items-center justify-center">
-                  <!-- TODO: Make it select one of icons -->
+                <div class="announcement__text">
                   {% if section.settings.announcement_bar_icon == 'clock' %}
                     {% render 'icon-clock' %}
                   {% endif %}
