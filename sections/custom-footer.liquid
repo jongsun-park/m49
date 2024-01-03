@@ -20,7 +20,8 @@
 
     {% when 'custom-ups-bar' %}
       {% render 'custom-ups-bar'
-        , settings: block.settings %}
+        , settings: block.settings
+        , id: section.id %}
 
   {% endcase %}
 {% endfor %}
