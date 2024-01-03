@@ -1201,25 +1201,7 @@
         "type": "custom-header",
         "settings": {
           "logo": "shopify:\/\/shop_images\/logo-removebg-preview.png",
-          "logo_img_width_int": 180,
-          "mobile_logo_img_width_int": 100,
-          "logo_h1": true,
-          "enable_sticky": false,
-          "enable_transparent": false,
-          "transparent_color": "#ffffff",
-          "menu_linklist": "main-menu",
-          "menu_linklist_mobile": "",
-          "menu_layout": "underneath",
-          "nav_featured_link": "Sale",
-          "enable_mobile_promo_carousel": true,
-          "enable_nav_mob_products": false,
-          "nav_mob_products_title": "Best Sellers",
-          "nav_mob_products_collection": "",
-          "enable_search": true,
-          "search_suggestions_title": "",
-          "search_suggestions_menu": "",
-          "icon_strategy": "icons_cart_search",
-          "cart_icon": "basket"
+          "menu_linklist": "main-menu"
         }
       },
       "custom-footer": {

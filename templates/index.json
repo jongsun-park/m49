@@ -49,6 +49,7 @@
     },
     "4aa9f7bb-c796-4acd-975e-32399fb533c6": {
       "type": "custom-newsletter",
+      "disabled": true,
       "settings": {
         "title": "join our Newsletter",
         "subheading": "<p>Be the first to know about our offers, events &  new arrivals.<\/p>",
@@ -58,6 +59,7 @@
     },
     "9caa4246-e37b-4189-bdbf-074b48fd1190": {
       "type": "custom-icons-banner",
+      "disabled": true,
       "settings": {
         "title": "Quisque velit nisi-",
         "heading": "\"PELLENTESQUE IN IPSUM ID ORCI PORTA DAPIBUS.\"",
@@ -74,6 +76,7 @@
     },
     "22a8086d-64bc-4433-8305-17b03ed1113a": {
       "type": "custom-ups-bar",
+      "disabled": true,
       "settings": {
         "ups_bar_col_1_text": "28 Day Returns",
         "ups_bar_col_2_text": "28 Day Returns",
