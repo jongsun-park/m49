@@ -1206,6 +1206,47 @@
       },
       "custom-footer": {
         "type": "custom-footer",
+        "blocks": {
+          "5b09eece-664e-4458-8bb7-1afb68d99b67": {
+            "type": "custom-newsletter",
+            "settings": {
+              "title": "join our Newsletter",
+              "subheading": "<p>Be the first to know about our offers, events &  new arrivals.<\/p>",
+              "color_bg": "#004289",
+              "newsletter_cover": "shopify:\/\/shop_images\/newsletter-cover.jpg"
+            }
+          },
+          "09cb7823-7daf-431f-a509-8b0b236a2e74": {
+            "type": "custom-icons-banner",
+            "settings": {
+              "title": "Quisque velit nisi-",
+              "heading": "\"PELLENTESQUE IN IPSUM ID ORCI PORTA DAPIBUS.\"",
+              "icon1_title": "WE love outdoors",
+              "icon1_description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+              "icon2_title": "Sustainable",
+              "icon2_description": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.",
+              "icon3_title": "based in IRELAND",
+              "icon3_description": "Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.",
+              "icon4_title": "something",
+              "icon4_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+              "link": ""
+            }
+          },
+          "395b15b5-cd71-47f5-aec3-553e9ffb054a": {
+            "type": "custom-ups-bar",
+            "settings": {
+              "ups_bar_col_1_text": "28 Day Returns",
+              "ups_bar_col_2_text": "28 Day Returns",
+              "ups_bar_col_3_text": "Irish Family Business Since 1984",
+              "fullwidth": false
+            }
+          }
+        },
+        "block_order": [
+          "5b09eece-664e-4458-8bb7-1afb68d99b67",
+          "09cb7823-7daf-431f-a509-8b0b236a2e74",
+          "395b15b5-cd71-47f5-aec3-553e9ffb054a"
+        ],
         "settings": {
           "footer_image": "shopify:\/\/shop_images\/logo-removebg-preview.png",
           "info_menu": "info",
