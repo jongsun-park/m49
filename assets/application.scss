@@ -546,5 +546,91 @@
 // Blog
 // custom-article.liquid
 .custom-article {
-  @include inner-container();
+  &__container {
+    // @include inner-container();
+    display: flex;
+    flex-direction: row;
+  }
+
+  .article {
+    padding: 4rem;
+
+    .article__title {
+      font-size: 4rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .article__content {
+      .subtitle {
+        font-size: 20px;
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      img {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .sidebar {
+    min-width: 460px;
+    padding: 3rem 4rem;
+    background-color: var(--light-color);
+
+    &__inner {
+      position: sticky;
+      top: 0;
+    }
+
+    &__title {
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      color: var(--secondary-color);
+    }
+
+    &__menu {
+      margin: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+// Custom Product Banner
+// custom-product-banner.liquid
+
+.custom-product-banner {
+  background-color: var(--light-color);
+  &__container {
+    max-width: var(--bp-lg);
+    margin: 1.5rem auto;
+    padding: 3rem;
+  }
+  &__title {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &__description {
+    text-align: center;
+    color: var(--secondary-color);
+  }
 }

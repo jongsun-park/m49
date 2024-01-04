@@ -1,13 +1,13 @@
-<div>
+<div class="custom-article__container">
   <div class="article" data-cc-animate>
     <h1 class="article__title">{{ article.title }}</h1>
     <div class="article__content">
       {{ article.content }}</div>
   </div>
   <aside class="sidebar" data-cc-animate>
-    <div>
+    <div class="sidebar__inner">
       <h2 class="sidebar__title">SIDEBAR</h2>
-      <ul>
+      <ul class="sidebar__menu">
         {% for link in linklists[section.settings.sidebar_links].links %}
           <li>
             <a href="{{ link.url }}">{{ link.title }}</a>
