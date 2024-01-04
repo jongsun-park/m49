@@ -457,4 +457,10 @@
   max-width: calc(var(--bp-xl) - 2rem);
   padding: 1rem;
   margin: 0 auto;
+}
+
+.custom-article {
+  max-width: var(--bp-xl);
+  padding: 1rem;
+  margin: 0 auto;
 }/*# sourceMappingURL=application.css.map */

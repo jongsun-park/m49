@@ -47,33 +47,6 @@
         "full_width": true
       }
     },
-    "4aa9f7bb-c796-4acd-975e-32399fb533c6": {
-      "type": "custom-newsletter",
-      "disabled": true,
-      "settings": {
-        "title": "join our Newsletter",
-        "subheading": "<p>Be the first to know about our offers, events &  new arrivals.<\/p>",
-        "color_bg": "#004289",
-        "newsletter_cover": "shopify:\/\/shop_images\/newsletter-cover.jpg"
-      }
-    },
-    "9caa4246-e37b-4189-bdbf-074b48fd1190": {
-      "type": "custom-icons-banner",
-      "disabled": true,
-      "settings": {
-        "title": "Quisque velit nisi-",
-        "heading": "\"PELLENTESQUE IN IPSUM ID ORCI PORTA DAPIBUS.\"",
-        "icon1_title": "WE love outdoors",
-        "icon1_description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-        "icon2_title": "Sustainable",
-        "icon2_description": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.",
-        "icon3_title": "based in IRELAND",
-        "icon3_description": "Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.",
-        "icon4_title": "something",
-        "icon4_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "link": "#"
-      }
-    },
     "22a8086d-64bc-4433-8305-17b03ed1113a": {
       "type": "custom-ups-bar",
       "disabled": true,
@@ -90,8 +63,6 @@
     "b4c8cc72-48f9-4056-932d-e1e062134f5a",
     "3c4bd7b9-31aa-42aa-9b38-94db8249c1c8",
     "65af5789-bc7c-4a01-b679-5c9b46eececf",
-    "4aa9f7bb-c796-4acd-975e-32399fb533c6",
-    "9caa4246-e37b-4189-bdbf-074b48fd1190",
     "22a8086d-64bc-4433-8305-17b03ed1113a"
   ]
 }

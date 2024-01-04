@@ -542,3 +542,9 @@
     }
   }
 }
+
+// Blog
+// custom-article.liquid
+.custom-article {
+  @include inner-container();
+}
