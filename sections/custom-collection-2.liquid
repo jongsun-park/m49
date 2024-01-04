@@ -1,25 +1,14 @@
-<style>
-  .collection_link_button {
-    color: #004289;
-    background-color: white;
-  }
-
-  .collection_link_button:hover {
-    color: white;
-    background-color: #004289;
-  }
-</style>
-
-<div class="custom-collection-2__container flex flex-col md:flex-row max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-6 md:space-y-0 mb-6" data-cc-animate>
+<div
+data-cc-animate class="collection-banner-2__container">
   <!-- Collection 1 -->
   {% assign colleciton_l_image = section.settings.featured_collection_l.image | image_url: width: 720 %}
 
-  <div class="custom-collection-2__collection-l flex-1 min-h-[576px] bg-center bg-cover" style="background-image: url('{{ colleciton_l_image }} }}')">
-    <div class="text-white h-full flex flex-col align-center justify-center backdrop-brightness-50 space-y-8 items-center min-h-[inherit]">
-      <span class="uppercase font-bold text-xs">{{ section.settings.featured_collection_l_title }}</span>
+  <div class="collection-container collection-l" style="background-image: url('{{ colleciton_l_image }} }}')">
+    <div class="collection-container__content">
+      <span class="collection-subtitle">{{ section.settings.featured_collection_l_title }}</span>
       {% assign collection_l = section.settings.featured_collection_l %}
       <!-- Collection Title -->
-      <h2 class="text-white text-6xl font-bold">
+      <h2 class="collection-title">
         {% if collection_l.title != blank %}
           {{ collection_l.title }}
         {% else %}
@@ -27,9 +16,9 @@
         {% endif %}
       </h2>
       <!-- Collection Description -->
-      <p class="w-[80%] max-w-[300px]">{{ section.settings.featured_collection_l_description }}</p>
+      <p class="collection-description">{{ section.settings.featured_collection_l_description }}</p>
       <!-- Collection Link -->
-      <a href="{{ collection_l.url }}" class="collection_link_button uppercase px-4 py-2 font-bold text-xs  transition duration-200">
+      <a href="{{ collection_l.url }}" class="collection-link">
         {% if section.settings.featured_collection_l_button_text != blank %}
           {{ section.settings.featured_collection_l_button_text }}
         {% else %}
@@ -42,14 +31,14 @@
   <!-- Collection 2 -->
   {% assign colleciton_r_image = section.settings.featured_collection_r.image | image_url: width: 720 %}
 
-  <div class="custom-collection-2__collection-r bg-gray-200 flex-1 md:min-w-[60%] min-h-[576px] bg-center bg-cover" style="background-image: url('{{ colleciton_r_image }} }}')">
-    <div class="text-white h-full flex flex-col align-center justify-center backdrop-brightness-50 space-y-8 items-center min-h-[inherit]">
-      <span class="uppercase font-bold text-xs">
+  <div class="collection-container collection-r" style="background-image: url('{{ colleciton_r_image }} }}')">
+    <div class="collection-container__content">
+      <span class="collection-subtitle">
         {{ section.settings.featured_collection_r_title }}
       </span>
       {% assign collection_r = section.settings.featured_collection_r %}
       <!-- Collection Title -->
-      <h2 class="text-white text-6xl font-bold">
+      <h2 class="collection-title">
         {% if collection_r.title != blank %}
           {{ collection_r.title }}
         {% else %}
@@ -57,9 +46,9 @@
         {% endif %}
       </h2>
       <!-- Collection Description -->
-      <p class="w-[80%] max-w-[400px]">{{ section.settings.featured_collection_r_description }}</p>
+      <p class="collection-description">{{ section.settings.featured_collection_r_description }}</p>
       <!-- Collection Link -->
-      <a href="{{ collection_r.url }}" class="collection_link_button uppercase px-4 py-2 font-bold text-xs  transition duration-200">
+      <a href="{{ collection_r.url }}" class="collection-link">
         {% if section.settings.featured_collection_r_button_text != blank %}
           {{ section.settings.featured_collection_r_button_text }}
         {% else %}
@@ -74,6 +63,7 @@
 {% schema %}
   {
     "name": "Collection Banner 2",
+    "class": "collection-banner-2",
     "settings": [
       {
         "type": "collection",
