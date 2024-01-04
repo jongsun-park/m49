@@ -1,36 +1,29 @@
-<style>
-  .custom-ups-bar__container {
-    background-color: #004289;
-    color: white;
-  }
-</style>
-
 <!-- TODO ICON SELELCTOR -->
-<div class="bg-[#F5F6F4] w-full -my-6" data-cc-animate>
-  <div class="custom-icon-banner max-w-[1440px] px-5 mx-auto mb-6 py-6 flex flex-col gap-6 md:gap-12 items-center">
-    <span class="text-center font-bold">{{ settings.title | escape }}</span>
-    <h2 class="text-4xl md:text-6xl font-bold text-center max-w-[24ch]">{{ settings.heading | escape }}</h2>
+<div class="custom-icons-banner" data-cc-animate>
+  <div class="custom-icons-banner container">
+    <p class="custom-icons-banner__title">{{ settings.title | escape }}</p>
+    <h2 class="custom-icons-banner__heading">{{ settings.heading | escape }}</h2>
 
-    <div class="grid grid-cols-2 md:grid-cols-4">
-      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-        <div>{% render 'icon-location-big' %}</div>
-        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ settings.icon1_title }}</div>
-        <div class="text-center">{{ settings.icon1_description }}</div>
+    <div class="custom-icons-banner__columns">
+      <div class="custom-icons-banner__column">
+        <div class="icon">{% render 'icon-location-big' %}</div>
+        <div class="title">{{ settings.icon1_title }}</div>
+        <div class="description">{{ settings.icon1_description }}</div>
       </div>
-      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-        <div>{% render 'icon-planet-earth' %}</div>
-        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ settings.icon2_title }}</div>
-        <div class="text-center">{{ settings.icon2_description }}</div>
+      <div class="custom-icons-banner__column">
+        <div class="icon">{% render 'icon-planet-earth' %}</div>
+        <div class="title">{{ settings.icon2_title }}</div>
+        <div class="description">{{ settings.icon2_description }}</div>
       </div>
-      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-        <div>{% render 'icon-saint-patrick' %}</div>
-        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ settings.icon3_title }}</div>
-        <div class="text-center">{{ settings.icon3_description }}</div>
+      <div class="custom-icons-banner__column">
+        <div class="icon">{% render 'icon-saint-patrick' %}</div>
+        <div class="title">{{ settings.icon3_title }}</div>
+        <div class="description">{{ settings.icon3_description }}</div>
       </div>
-      <div class="flex flex-col space-y-4 py-6 px-6 items-center">
-        <div>{% render 'icon-knitting' %}</div>
-        <div class="uppercase font-bold text-2xl text-[#333] text-center">{{ settings.icon4_title }}</div>
-        <div class="text-center">{{ settings.icon4_description }}</div>
+      <div class="custom-icons-banner__column">
+        <div class="icon">{% render 'icon-knitting' %}</div>
+        <div class="title">{{ settings.icon4_title }}</div>
+        <div class="description">{{ settings.icon4_description }}</div>
       </div>
     </div>
 

@@ -12,7 +12,7 @@
   --bp-sm: 640px;
   --bp-md: 768px;
   --bp-lg: 1024px;
-  --bp-xl: 1280px;
+  --bp-xl: 1440px;
   --bp-2xl: 1536px;
 }
 
@@ -307,12 +307,12 @@
 // custom-footer.liquid
 .custom-footer {
   // @include inner-container();
-  margin-left: auto;
-  width: 90%;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-
   &__container {
+    margin-left: auto;
+    width: 90%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
@@ -405,6 +405,140 @@
     gap: 1rem;
     &__logo {
       max-height: 2rem;
+    }
+  }
+}
+
+// Footer Block
+// Custom Footer Newsletter
+// custom-footer-newsletter.liquid
+.custom-newsletter {
+  &__container {
+    min-height: 20rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    padding: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .custom-newsletter__title {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .signup-form__container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+
+    .custom-newsletter__email {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 15rem;
+
+      input {
+        width: 100%;
+        height: 50px;
+      }
+    }
+    button {
+      flex: 1;
+      min-width: 15rem;
+      height: 50px;
+      font-weight: bold;
+      background: var(--secondary-color);
+    }
+  }
+}
+
+// Footer Block
+// Custom Iconst Banner
+// custom-icons-banner.liquid
+.custom-icons-banner {
+  background-color: var(--light-color);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  &__container {
+    @include inner-container();
+  }
+
+  &__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__heading {
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: center;
+    max-width: 30ch;
+    margin: 2rem auto;
+  }
+
+  &__columns {
+    display: flex;
+    max-width: var(--bp-2xl);
+    margin: 2rem auto;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+
+    .custom-icons-banner__column {
+      padding: 2rem 1rem;
+    }
+
+    .icon svg {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      font-size: 1rem;
+      max-width: 27ch;
+    }
+  }
+}
+
+// Footer Block
+// Custom UPS Bar
+// custom-ups-bar.liquid
+.custom-ups-bar {
+  &__container {
+    display: flex;
+    background: var(--secondary-color);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: white;
+    justify-content: space-around;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &.box {
+    .custom-ups-bar__container {
+      max-width: calc(var(--bp-xl) - 2rem);
+      padding: 1rem;
+      margin: 0 auto;
     }
   }
 }

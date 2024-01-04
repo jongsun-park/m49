@@ -1,0 +1,37 @@
+{% render 'custom-ups-bar'
+  , settings: section.settings %}
+
+
+{% schema %}
+  {
+    "name": "custom-ups-bar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "ups_bar_col_1_text",
+        "label": "UPS Bar Text 1",
+        "default": "28 Day Returns"
+      }, {
+        "type": "text",
+        "id": "ups_bar_col_2_text",
+        "label": "Free Delivery On Orders Over €40",
+        "default": "28 Day Returns"
+      }, {
+        "type": "text",
+        "id": "ups_bar_col_3_text",
+        "label": "UPS Bar Text 3",
+        "default": "Irish Family Business Since 1984"
+      }, {
+        "type": "checkbox",
+        "id": "fullwidth",
+        "label": "Banner Full Width",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom UPS Bar"
+      }
+    ]
+  }
+{% endschema %}

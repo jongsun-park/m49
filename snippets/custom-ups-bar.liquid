@@ -1,33 +1,23 @@
-<style>
-  .custom-ups-bar__container {
-    background-color: #004289;
-    color: white;
-  }
-</style>
-
 <!-- TODO: Replace section ID -->
+<!--
+-->
 {% if settings.fullwidth == true %}
-  <style>
-    .custom-ups-bar-{{ id }} {
-      background-color: #004289;
-      margin-left: 0;
-      margin-right: 0;
-      max-width: 100%;
-    }
-  </style>
+
 {% endif %}
 
+{% liquid
+  if settings.fullwidth == true
+    assign class = "fullwidth"
+  else
+    assign class = "box"
+  endif
+%}
+
 <!-- TODO ICON SELELCTOR -->
-<div class="custom-ups-bar-{{ id }} max-w-[1440px] px-5 mx-auto space-y-4 md:space-x-4 md:space-y-0 mb-6 font-bold" data-cc-animate>
-  <div class="custom-ups-bar__container space-y-4 md:space-y-0 p-5 w-full flex flex-col md:flex-row justify-around">
-    <div class="flex flex-row gap-2 items-center text-xl">
-      {% render 'icon-refresh' %} {{ settings.ups_bar_col_1_text | escape }}
-    </div>
-    <div class="flex flex-row gap-2 items-center text-xl">
-      {% render 'icon-truck' %} {{ settings.ups_bar_col_2_text | escape }}
-    </div>
-    <div class="flex flex-row gap-2 items-center text-xl">
-      {% render 'icon-map' %} {{ settings.ups_bar_col_3_text | escape }}
-    </div>
+<div class="custom-ups-bar {{ class  }}" data-cc-animate>
+  <div class="custom-ups-bar__container">
+    <div>{% render 'icon-refresh' %} {{ settings.ups_bar_col_1_text | escape }}</div>
+    <div>{% render 'icon-truck' %} {{ settings.ups_bar_col_2_text | escape }}</div>
+    <div>{% render 'icon-map' %} {{ settings.ups_bar_col_3_text | escape }}</div>
   </div>
 </div>
