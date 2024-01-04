@@ -1238,7 +1238,7 @@
               "ups_bar_col_1_text": "28 Day Returns",
               "ups_bar_col_2_text": "28 Day Returns",
               "ups_bar_col_3_text": "Irish Family Business Since 1984",
-              "fullwidth": false
+              "fullwidth": true
             }
           }
         },
