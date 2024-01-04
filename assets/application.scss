@@ -579,6 +579,7 @@
       }
 
       img {
+        width: 100%;
         margin-bottom: 1.5rem;
       }
     }
@@ -618,7 +619,7 @@
   background-color: var(--light-color);
   &__container {
     max-width: var(--bp-lg);
-    margin: 1.5rem auto;
+    margin: 1.5rem auto 0;
     padding: 3rem;
   }
   &__title {

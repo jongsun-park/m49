@@ -485,6 +485,7 @@
   margin-bottom: 1.5rem;
 }
 .custom-article .article .article__content img {
+  width: 100%;
   margin-bottom: 1.5rem;
 }
 .custom-article .sidebar {
@@ -515,7 +516,7 @@
 }
 .custom-product-banner__container {
   max-width: var(--bp-lg);
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 0;
   padding: 3rem;
 }
 .custom-product-banner__title {
